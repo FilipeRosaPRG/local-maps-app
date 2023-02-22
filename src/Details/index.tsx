@@ -1,6 +1,6 @@
 import { RouteProp, useNavigation, useRoute } from "@react-navigation/native";
 import React, { useEffect, useState } from "react";
-import { View, Text, StyleSheet, ActivityIndicator } from "react-native";
+import { View, Text, StyleSheet, ActivityIndicator, Share, Button, TouchableOpacity } from "react-native";
 import { IMarker } from "../Home";
 
 type DetailRoute = RouteProp<{ detail: IMarker }, "detail">;
@@ -52,6 +52,20 @@ export default function Detail() {
 
       <Text style={styles.section}>Contato</Text>
       <Text style={styles.text}>{params.params.contact}</Text>
+
+      <TouchableOpacity
+        onPress={() => {
+          Share.share({
+            message: `Olá, encontrei o ${params.params.name} no LocalMaps, e achei que você poderia gostar!`,
+          });
+        }}
+        style={styles.shareButton}
+      >
+        <Text
+          style={styles.shareText}
+        >Compartilhar</Text>
+
+      </TouchableOpacity>
     </View>
   );
 }
@@ -80,5 +94,18 @@ const styles = StyleSheet.create({
   text: {
     color: "#6C6C80",
     fontSize: 16,
+  },
+  shareButton: {
+    backgroundColor: "#34CB79",
+    borderRadius: 10,
+    height: 50,
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 20,
+  },
+  shareText: {
+    color: "#FFF",
+    fontSize: 16,
+    fontWeight: "bold",
   },
 });
