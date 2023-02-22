@@ -1,13 +1,14 @@
 # Local Maps Mobile App
 
-## Objective
+## Objetive
+
 I followed a tutorial on YouTube, which consists of a system for registering local businesses and being shown in the mobile application close to you.
 
 The objective of this project is to study the technologies. The tutorial was out of date and I had to study and update myself on technologies and I learned a lot from it.
 
-Mobile Repository:
+- [Mobile Repository](https://github.com/FilipeRosaPRG/local-maps-app)
 
-API Repository/Backend
+- [API Repository/Backend](https://github.com/FilipeRosaPRG/local-maps-api)
 
 ## Implementations
 - [x] [Share](https://reactnative.dev/docs/share)
